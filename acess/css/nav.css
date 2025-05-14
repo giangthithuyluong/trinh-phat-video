@@ -1,0 +1,109 @@
+nav {
+    width: 100%;
+    height: var(--nav-height);
+    max-height: 20vh;
+    margin-bottom: 20px;
+    box-shadow: 0px 1px 2px aqua,
+    0px 1px 8px aqua,
+    0px 1px 15px aqua;
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+    align-items: center;
+    & a {
+        width: max-content;
+        height: 50%;
+        min-height: 20px;
+        display: inline-block;
+        & img {
+            height: 100%;
+        }
+    }
+    & > div {
+        max-width: 50vw;
+        height: var(--btn-height);
+        flex: 1;
+        display: flex;
+        & .search_form {
+            flex: 1;
+            border: 1px solid lightgray;
+            border-radius: 30px;
+            box-shadow: 0px 0px 2px lightgray inset;
+            display: inline-flex;
+            overflow: hidden;
+            & input#search_text {
+                flex: 1;
+                padding: calc((var(--btn-height) - var(--font-size))/2) 20px;
+                border: none;
+            }
+            & button#btn_search {
+                width: 10%;
+                min-width: calc(var(--btn-width)*2);
+                border-radius: 0;
+                background-color: lightgray;
+            }
+        }
+    }
+    & button{
+        width: var(--btn-width);
+        height: var(--btn-height);
+        border: none;
+        border-radius: 50%;
+        background: transparent;
+        &::after {
+            font-family: 'bootstrap-icons';
+            font-size: 1.2rem;
+        }
+        &#more::after {
+            content: '\F479';
+        }
+        &#search::after, &#btn_search::after {
+            content: '\F52A';
+        }
+        &#mic::after {
+            content: '\F48D';
+        }
+        &#setting::after {
+            content: '\F5D3';
+        }
+        &#search {
+            display: none;
+        }
+        &:not(#setting):hover {
+            background-color: lightgray;
+        }
+        &#login{
+            width: max-content;
+            padding: 0 20px;
+            border: 1px solid lightgray;
+            border-radius: 30px;
+            color: royalblue;
+            &::after {
+                margin-right: 10px;
+                content: '\F4D7';
+                line-height: calc((var(--btn-height) + var(--font-size))/2);
+                float: left;
+            }
+            &::before {
+                content: 'Dang nhap';
+                font-weight: bold;
+                line-height: calc((var(--btn-height) + var(--font-size))/2);
+            }
+            &:hover {
+                background-color: lightblue;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    nav > div {
+        justify-content: flex-end;
+        & .search_form {
+            display: none;
+        }
+        & #search {
+            display: block;
+        }
+    }  
+}
