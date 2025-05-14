@@ -21,7 +21,7 @@
     </style>
 
     <link rel="stylesheet" href="./acess/css/nav.css">
-
+    <link rel="stylesheet" href="./acess/css/video.css">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -46,21 +46,25 @@
             <button type="button" id="login"></button>
         </nav>
         <div class="video">
+            <video src="" id="current_video"></video>
             <div class="video_control">
-                <input type="range" name="progress" id="progress" min="0" max="100">
+                <input type="range" name="progress" id="progress" min="0" max="100" value="0">
                 <div class="button_control">
-                    <button type="button" class="pre"></button>
+                    <button type="button" id="prev" title="Truoc"></button>
                     <button type="button" id="control"></button>
-                    <button type="button" class="next"></button>
+                    <button type="button" id="next" title="Sau"></button>
                     <div>
-                        <div class="volume"><input type="range" name="volume_value" id="volume_value"></div>
-                        <p class="time"></p>
+                        <div class="volume"><input type="range" name="volume_value" id="volume_value" min="0" max="100" value="0"></div>
+                        <p id="time">
+                            <span id="current_time"></span>
+                            <span id="duration"></span>
+                        </p>
                     </div>
-                    <button type="button" class="video_cc"></button>
-                    <button type="button" class="video_setting"></button>
-                    <button type="button" class="video_to_small"></button>
-                    <button type="button" class="video_mode"></button>
-                    <button type="button" class="video_fullscreen"></button>
+                    <button type="button" id="video_cc" title="Phu de"></button>
+                    <button type="button" id="video_setting" title="Cai dat"></button>
+                    <button type="button" id="video_to_small" title="Mo hinh trong hinh"></button>
+                    <button type="button" id="video_mode" title="Che do rap phim"></button>
+                    <button type="button" id="video_screen_mode" class="video_fullscreen" title="Toan man hinh"></button>
                 </div>
             </div>
         </div>
@@ -83,4 +87,5 @@
         </div>
     </div>
 </body>
+<script src="./acess/js/video.js"></script>
 </html>

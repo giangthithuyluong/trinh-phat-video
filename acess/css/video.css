@@ -1,0 +1,96 @@
+.video {
+    width: 600px;
+    min-width: 50vw;
+    height: max-content;
+    min-height: 200px;
+    background-color: black;
+    position: relative;
+    video {
+        width: 100%;
+    }
+    .video_control {
+        width: 100%;
+        position: absolute;
+        bottom: 2px;
+        box-shadow: 0 -10px 15px -10px lightgray inset;
+        display: none;
+        #progress {
+            width: 100%;
+        }
+        p#time {
+            color: white;
+        }
+        .button_control {
+            display: flex;
+            justify-content: space-around;
+            button {
+                width: var(--btn-width);
+                height: var(--btn-height);
+                border: none;
+                background-color: transparent;
+                font-family: 'bootstrap-icons';
+                font-size: 1.5rem;
+                color: white;
+                &#prev::after {
+                    content: '\F563';
+                }
+                &.pause::after {
+                    content: '\F4C3';
+                }
+                &.play::after {
+                    content: '\F4F4';
+                }
+                &#next::after {
+                    content: '\F557';
+                }
+                &#video_cc::after {
+                    content: '\F165';
+                }
+                &#video_setting::after {
+                    content: '\F3E2';
+                }
+                &#video_to_small::after {
+                    content: '\F62D';
+                }
+                &#video_mode::after {
+                    content: '\F584';
+                }
+                &.video_fullscreen::after {
+                    content: '\F3DF';
+                }
+                &.video_fullscreen_exit::after {
+                    content: 'F3DE';
+                }
+            }
+            & > div {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                .volume{
+                    display: flex;
+                    #volume_value {
+                        display: none;
+                    }
+                    &::before {
+                    content: '\F60A';
+                    font-family: 'bootstrap-icons';
+                    font-size: 1.5rem;
+                    color: white;
+                    }
+                    &:hover #volume_value {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    &:hover .video_control {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    .video {
+        width: 100vw;
+    }
+}
