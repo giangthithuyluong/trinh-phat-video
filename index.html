@@ -46,25 +46,28 @@
             <button type="button" id="login"></button>
         </nav>
         <div class="video">
-            <video src="" id="current_video"></video>
-            <div class="video_control">
-                <input type="range" name="progress" id="progress" min="0" max="100" value="0">
-                <div class="button_control">
-                    <button type="button" id="prev" title="Truoc"></button>
-                    <button type="button" id="control"></button>
-                    <button type="button" id="next" title="Sau"></button>
-                    <div>
-                        <div class="volume"><input type="range" name="volume_value" id="volume_value" min="0" max="100" value="0"></div>
-                        <p id="time">
-                            <span id="current_time"></span>
-                            <span id="duration"></span>
-                        </p>
+            <div id="small_mode">
+                <button type="button" id="small_mode_close" style="display:none;">X</button>
+                <video src="" id="current_video"></video>
+                <div class="video_control">
+                    <input type="range" name="progress" id="progress" min="0" max="100" value="0">
+                    <div class="button_control">
+                        <button type="button" id="prev" title="Truoc"></button>
+                        <button type="button" id="control" class="play"></button>
+                        <button type="button" id="next" title="Sau"></button>
+                        <div>
+                            <div class="volume"><input type="range" name="volume_value" id="volume_value" min="0" max="100" value="0"></div>
+                            <p id="time">
+                                <span id="current_time"></span>
+                                <span id="duration"></span>
+                            </p>
+                        </div>
+                        <button type="button" id="video_cc" title="Phu de"></button>
+                        <button type="button" id="video_setting" title="Cai dat"></button>
+                        <button type="button" id="video_to_small" title="Mo hinh trong hinh"></button>
+                        <button type="button" id="video_mode" title="Che do rap phim"></button>
+                        <button type="button" id="video_screen_mode" class="video_fullscreen" title="Toan man hinh"></button>
                     </div>
-                    <button type="button" id="video_cc" title="Phu de"></button>
-                    <button type="button" id="video_setting" title="Cai dat"></button>
-                    <button type="button" id="video_to_small" title="Mo hinh trong hinh"></button>
-                    <button type="button" id="video_mode" title="Che do rap phim"></button>
-                    <button type="button" id="video_screen_mode" class="video_fullscreen" title="Toan man hinh"></button>
                 </div>
             </div>
         </div>

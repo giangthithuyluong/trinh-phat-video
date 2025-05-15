@@ -11,18 +11,23 @@ var nextBtn = document.getElementById('next')
 var ccBtn = document.getElementById('video_cc')
 var videoSetting = document.getElementById('video_setting')
 var videoSmall = document.getElementById('video_to_small')
+var closeSmall = document.getElementById('small_mode_close')
 var videoMode = document.getElementById('video_mode')
 var modeFullscreen = document.getElementById('video_screen_mode')
 
 const app = {
     currentIndex: 0,
     render() {
-        this.loadSong(this.currentIndex)
+        video.src = list[this.currentIndex].link
         volumeValue.value = video.volume * 100
     },
     loadSong(index) {
         this.currentIndex = index
         video.src = list[this.currentIndex].link
+
+        
+
+        setTimeout(video.play(), 1000)
     },
     defineProperties() {
         let length = list.length
@@ -98,6 +103,27 @@ const app = {
         }
         nextBtn.onclick = (e) => {
             _this.loadSong(_this.nextIndex)
+        }
+        videoSmall.onclick = (e) => {
+            let smallMode = document.getElementById('small_mode')
+            closeSmall.style.display = 'block'
+            Object.assign(smallMode.style,{
+                width: '30vw',
+                height: 'max-content',
+                position: 'absolute',
+                bottom: 0,
+                right: 0
+            })
+        }
+        closeSmall.onclick = (e) => {
+            let smallMode = document.getElementById('small_mode')
+            smallMode.removeAttribute('style')
+            e.target.style.display = 'none'
+        }
+        videoMode.onclick = (e) => {
+            let videoDiv = document.querySelector('.video')
+            video.classList.contains('cinema') ? videoDiv.removeAttribute('style') : videoDiv.style.width = '100%'
+            video.classList.toggle('cinema')
         }
         modeFullscreen.onclick = (e) => {
             video.requestFullscreen()
